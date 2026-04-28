@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ObjectDetectionWater.unity
     guid: 8ce90486a3cda824d87271e365b38fbb
+  - enabled: 1
+    path: Assets/00.TestScenes/heeyeon/Scenes/ObjectDetectionWater_roomScaning.unity
+    guid: 5ebbfdb920b0c824882f2c7d46b686a1
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: a4fd27c8dac19d0438f5aaded302f8f7, type: 2}
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
