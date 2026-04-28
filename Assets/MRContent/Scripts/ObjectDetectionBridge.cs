@@ -1,6 +1,7 @@
+using Meta.XR.BuildingBlocks.AIBlocks;
+using Meta.XR.MRUtilityKit;
 using System.Collections.Generic;
 using UnityEngine;
-using Meta.XR.BuildingBlocks.AIBlocks;
 
 /// <summary>
 /// Object Detection → ContentSpawner 연결 브릿지.
@@ -14,6 +15,7 @@ public class ObjectDetectionBridge : MonoBehaviour
     [SerializeField] private ContentSpawner contentSpawner;
     [SerializeField] private ObjectDetectionAgent detectionAgent;
     [SerializeField] private ObjectDetectionVisualizer visualizer;
+    [SerializeField] private FindSpawnPositions findSpawnPositions;
 
     [Header("Detection Labels")]
     [SerializeField] private List<string> geobukseonLabels = new List<string> { "keyring", "turtle_ship", "geobukseon" };
@@ -108,6 +110,13 @@ public class ObjectDetectionBridge : MonoBehaviour
 
             // 탐지 스케일 먼저 전달 → SpawnOccluder에서 사용
             contentSpawner?.UpdateOccluderScale(worldScale);
+
+            //findSpawnPosition
+            if (findSpawnPositions != null)
+            {
+                findSpawnPositions.ClearSpawnedPrefabs(); // 중복 방지
+                findSpawnPositions.StartSpawn();
+            }
 
             if (contentSpawner != null && contentSpawner.HasSceneAnchor)
             {
