@@ -4046,6 +4046,21 @@ MonoBehaviour:
           DisplayName: 
         memberName: findSpawnPositions
         _editorSelectedGizmoIndex: 0
+      - enabled: 0
+        typeName: ObjectDetectionBridge, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        attribute:
+          GizmoType: 0
+          ShowGizmoByDefault: 0
+          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+          Tweakable: 1
+          Min: 0
+          Max: 1
+          Category: 
+          Description: 
+          DisplayName: 
+        memberName: customSpawner
+        _editorSelectedGizmoIndex: 0
 --- !u!114 &65727700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4186,6 +4201,7 @@ MonoBehaviour:
   detectionAgent: {fileID: 0}
   visualizer: {fileID: 0}
   findSpawnPositions: {fileID: 755364320}
+  customSpawner: {fileID: 1299883704}
   geobukseonLabels:
   - Geobukseon
   - turtle_ship
@@ -5237,7 +5253,7 @@ MonoBehaviour:
   spawnHeight: 0
   spawnLabels: 4096
   normalOffset: 0
-  SpawnOnStart: 1
+  SpawnOnStart: 2
 --- !u!4 &1299883705
 Transform:
   m_ObjectHideFlags: 0
@@ -5381,6 +5397,63 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1001 &1444875668
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3264244783554514565, guid: b65746ae8495f164188fc87d6d3b0f8c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.08479
+      objectReference: {fileID: 0}
+    - target: {fileID: 3264244783554514565, guid: b65746ae8495f164188fc87d6d3b0f8c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3264244783554514565, guid: b65746ae8495f164188fc87d6d3b0f8c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.50136
+      objectReference: {fileID: 0}
+    - target: {fileID: 3264244783554514565, guid: b65746ae8495f164188fc87d6d3b0f8c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3264244783554514565, guid: b65746ae8495f164188fc87d6d3b0f8c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3264244783554514565, guid: b65746ae8495f164188fc87d6d3b0f8c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3264244783554514565, guid: b65746ae8495f164188fc87d6d3b0f8c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3264244783554514565, guid: b65746ae8495f164188fc87d6d3b0f8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3264244783554514565, guid: b65746ae8495f164188fc87d6d3b0f8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3264244783554514565, guid: b65746ae8495f164188fc87d6d3b0f8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5652505065459956666, guid: b65746ae8495f164188fc87d6d3b0f8c, type: 3}
+      propertyPath: m_Name
+      value: WaterPlane
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b65746ae8495f164188fc87d6d3b0f8c, type: 3}
 --- !u!1 &1539655215
 GameObject:
   m_ObjectHideFlags: 0
@@ -5627,6 +5700,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EffectMesh
       objectReference: {fileID: 0}
+    - target: {fileID: 5456522116536683071, guid: 37c47f9928e3fef4bb9a9ffaafab5526, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5680,7 +5757,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2015618963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5693,7 +5770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76943ac7e7394f3e969f0c048b26639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnOnStart: 1
+  SpawnOnStart: 2
   MeshMaterial: {fileID: 2100000, guid: 599b01c5f1d17436c89b88cc04257314, type: 2}
   BarycentricCoordinatesEnabled: 0
   Colliders: 0
@@ -6057,3 +6134,4 @@ SceneRoots:
   - {fileID: 1775926789}
   - {fileID: 453046572}
   - {fileID: 1299883705}
+  - {fileID: 1444875668}

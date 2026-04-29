@@ -16,6 +16,7 @@ public class ObjectDetectionBridge : MonoBehaviour
     [SerializeField] private ObjectDetectionAgent detectionAgent;
     [SerializeField] private ObjectDetectionVisualizer visualizer;
     [SerializeField] private FindSpawnPositions findSpawnPositions;
+    [SerializeField] private CustomSpawner customSpawner;   
 
     [Header("Detection Labels")]
     [SerializeField] private List<string> geobukseonLabels = new List<string> { "keyring", "turtle_ship", "geobukseon" };
@@ -116,6 +117,11 @@ public class ObjectDetectionBridge : MonoBehaviour
             {
                 findSpawnPositions.ClearSpawnedPrefabs(); // 중복 방지
                 findSpawnPositions.StartSpawn();
+            }
+
+            if (customSpawner != null)
+            {
+                customSpawner.StartSpawn();
             }
 
             if (contentSpawner != null && contentSpawner.HasSceneAnchor)
