@@ -92,6 +92,8 @@ Material:
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
+    - _CircleFadeEnd: 0.793
+    - _CircleFadeStart: 0.749
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
@@ -108,7 +110,7 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
-    - _NormalStrength: 0.55
+    - _NormalStrength: 0.74
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
