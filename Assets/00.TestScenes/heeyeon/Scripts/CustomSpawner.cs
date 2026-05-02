@@ -27,6 +27,7 @@ public class CustomSpawner : MonoBehaviour
         {
             MRUK.Instance.RegisterSceneLoadedCallback(() =>
             {
+                _currentType = ContentType.Geobukseon;
                 switch (SpawnOnStart)
                 {
                     case MRUK.RoomFilter.AllRooms:
@@ -69,7 +70,7 @@ public class CustomSpawner : MonoBehaviour
         {
             ContentType.Geobukseon => geobukseonPrefab,
             ContentType.Bugeo => bugeoPrefab,
-            _ => null
+            _ => geobukseonPrefab
         };
 
         if (prefabToSpawn == null)

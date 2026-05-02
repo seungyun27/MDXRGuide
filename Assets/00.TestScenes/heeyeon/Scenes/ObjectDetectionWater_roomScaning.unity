@@ -4363,50 +4363,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &220119400
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 220119402}
-  - component: {fileID: 220119401}
-  m_Layer: 0
-  m_Name: DebugLogger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &220119401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 220119400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f132e1d6cadeb0a4e9613dd2ba48605c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DebugLogger
---- !u!4 &220119402
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 220119400}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03417, y: -377.4557, z: 0.47244}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &354557697
 GameObject:
   m_ObjectHideFlags: 0
@@ -5266,9 +5222,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7f8883395dbf24499d6253580bdc08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustomSpawner
-  geobukseonPrefab: {fileID: 8399383316896990656, guid: b56f7803cf1161d45a0a07b86d5d2afe, type: 3}
-  bugeoPrefab: {fileID: 8399383316896990656, guid: 029b12bccf85e7446a36cf0e2de83aab, type: 3}
-  spawnHeight: 0.1
+  geobukseonPrefab: {fileID: 7049089768555808681, guid: 141714763112cb14ca6438782b6c8802, type: 3}
+  bugeoPrefab: {fileID: 8654664969361216032, guid: 3788a630e113fed4ba43c410c6fe9f57, type: 3}
+  spawnHeight: 0.2
   spawnLabels: 4096
   normalOffset: 0
   SpawnOnStart: 0
@@ -6093,4 +6049,3 @@ SceneRoots:
   - {fileID: 1775926789}
   - {fileID: 420400239}
   - {fileID: 1299883705}
-  - {fileID: 220119402}
