@@ -15,12 +15,12 @@ public class ObjectDetectionBridge : MonoBehaviour
     [SerializeField] private ContentSpawner contentSpawner;
     [SerializeField] private ObjectDetectionAgent detectionAgent;
     [SerializeField] private ObjectDetectionVisualizer visualizer;
-    [SerializeField] private FindSpawnPositions findSpawnPositions;
+
     [SerializeField] private CustomSpawner customSpawner;   
 
     [Header("Detection Labels")]
     [SerializeField] private List<string> geobukseonLabels = new List<string> { "keyring", "turtle_ship", "geobukseon" };
-    [SerializeField] private List<string> bugeoLabels      = new List<string> { "bugeo", "dried_fish", "pollock" };
+    [SerializeField] private List<string> bugeoLabels      = new List<string> { "bugeo", "dried_fish", "pollock", "Pollack_Bell" };
 
     [Header("Settings")]
     [Tooltip("최초 스폰에 필요한 연속 탐지 프레임 수")]
@@ -112,16 +112,11 @@ public class ObjectDetectionBridge : MonoBehaviour
             // 탐지 스케일 먼저 전달 → SpawnOccluder에서 사용
             contentSpawner?.UpdateOccluderScale(worldScale);
 
-            //findSpawnPosition
-            if (findSpawnPositions != null)
-            {
-                findSpawnPositions.ClearSpawnedPrefabs(); // 중복 방지
-                findSpawnPositions.StartSpawn();
-            }
 
             if (customSpawner != null)
             {
-                customSpawner.StartSpawn();
+                customSpawner.StartSpawn(detected);
+                Debug.Log($"[ObjectDetectionBridge] 씬 앵커 기준 스폰: type={detected}");
             }
 
             if (contentSpawner != null && contentSpawner.HasSceneAnchor)
@@ -223,6 +218,8 @@ public class ObjectDetectionBridge : MonoBehaviour
 
     private ContentType MatchLabel(string label)
     {
+        Debug.Log($"[Bridge] MatchLabel 입력값: '{label}'"); // 실제 라벨 확인용
+
         if (string.IsNullOrEmpty(label)) return ContentType.None;
         var lower = label.ToLowerInvariant();
         foreach (var g in geobukseonLabels)
