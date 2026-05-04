@@ -62,8 +62,8 @@ Transform:
   m_GameObject: {fileID: 1993562979627005593}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.472, y: 0.042, z: 0.112}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: 0.41837, y: 0.042, z: 0.065433}
+  m_LocalScale: {x: 0.063761, y: 0.063761, z: 0.063761}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3327167777971804630}
@@ -162,7 +162,7 @@ MonoBehaviour:
   mouth: {fileID: 6332071457302472144}
   facingThreshold: 0.95
   detectionDistance: 20
-  followSpeed: 5
+  followSpeed: 2.5
   acceleration: 2
   arrivalDistance: 0.1
   scaleCurve:
@@ -219,8 +219,8 @@ Transform:
   m_GameObject: {fileID: 3982265789722298108}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.022, y: 0.042, z: 0.372}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: 0.13144, y: 0.042, z: 0.23121}
+  m_LocalScale: {x: 0.063761, y: 0.063761, z: 0.063761}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3327167777971804630}
@@ -319,7 +319,7 @@ MonoBehaviour:
   mouth: {fileID: 6332071457302472144}
   facingThreshold: 0.95
   detectionDistance: 20
-  followSpeed: 5
+  followSpeed: 2.5
   acceleration: 2
   arrivalDistance: 0.1
   scaleCurve:
@@ -376,8 +376,8 @@ Transform:
   m_GameObject: {fileID: 4804177111651559996}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.191, y: 0.042, z: -0.405}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: 0.2392, y: 0.042, z: -0.26421}
+  m_LocalScale: {x: 0.063761, y: 0.063761, z: 0.063761}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3327167777971804630}
@@ -476,7 +476,7 @@ MonoBehaviour:
   mouth: {fileID: 6332071457302472144}
   facingThreshold: 0.95
   detectionDistance: 20
-  followSpeed: 5
+  followSpeed: 2.5
   acceleration: 2
   arrivalDistance: 0.1
   scaleCurve:
@@ -647,8 +647,8 @@ Transform:
   m_GameObject: {fileID: 6374225354923952580}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.626, y: 0.042, z: -0.405}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: 0.51656, y: 0.042, z: -0.26421}
+  m_LocalScale: {x: 0.063761, y: 0.063761, z: 0.063761}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3327167777971804630}
@@ -747,7 +747,7 @@ MonoBehaviour:
   mouth: {fileID: 6332071457302472144}
   facingThreshold: 0.95
   detectionDistance: 20
-  followSpeed: 2
+  followSpeed: 2.5
   acceleration: 2
   arrivalDistance: 0.1
   scaleCurve:
@@ -802,13 +802,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7382751985614162080}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.74743533, w: 0.66433465}
-  m_LocalPosition: {x: 0.0499, y: 0.0162, z: -0.0045}
+  m_LocalRotation: {x: 0.48552456, y: 0.5462582, z: 0.5101584, w: 0.45343834}
+  m_LocalPosition: {x: 0.0499, y: 0.016199999, z: -0.0003}
   m_LocalScale: {x: -0.019064004, y: -0.019064004, z: -0.019064}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6013831656947353870}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -6.722, y: 93.941, z: 89.538}
 --- !u!33 &5817859419486855278
 MeshFilter:
   m_ObjectHideFlags: 0

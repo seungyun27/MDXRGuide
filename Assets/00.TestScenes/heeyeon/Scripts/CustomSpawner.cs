@@ -28,7 +28,7 @@ public class CustomSpawner : MonoBehaviour
         {
             MRUK.Instance.RegisterSceneLoadedCallback(() =>
             {
-                _currentType = ContentType.Bugeo;
+                _currentType = ContentType.Geobukseon;
                 switch (SpawnOnStart)
                 {
                     case MRUK.RoomFilter.AllRooms:
@@ -97,6 +97,32 @@ public class CustomSpawner : MonoBehaviour
             _spawnedInstance = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
             Debug.Log($"[CustomSpawner] 스폰 완료: {_currentType} @ {spawnPos}");
 
+            if (_currentType == ContentType.Geobukseon)
+            {
+                // 비활성화된 자식까지 모두 포함해서 "GeoBukSeon_Effects"라는 이름을 가진 객체를 찾습니다.
+                GameObject targetChild = null;
+                var allChildren = _spawnedInstance.GetComponentsInChildren<Transform>(true);
+
+                foreach (var child in allChildren)
+                {
+                    if (child.name == "GeoBukSeon_Effects")
+                    {
+                        targetChild = child.gameObject;
+                        break;
+                    }
+                }
+
+                if (targetChild != null)
+                {
+                    Debug.Log("[CustomSpawner] GeoBukSeon_Effects 찾기 성공! NarrationManager에 등록합니다.");
+                    narrationManager?.SetObjectToActivateAfterFirstClip(targetChild);
+                }
+                else
+                {
+                    // 만약 여기서 로그가 찍힌다면 이름에 오타가 있는지 확인해야 합니다.
+                    Debug.LogWarning("[CustomSpawner] 'GeoBukSeon_Effects'라는 이름의 자식을 찾을 수 없습니다. 구조나 이름을 확인하세요.");
+                }
+            }
             narrationManager?.PlayNarration(_currentType);
             break;
         }

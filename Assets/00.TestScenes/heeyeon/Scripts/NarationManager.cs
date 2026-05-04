@@ -19,6 +19,8 @@ public class NarrationManager : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float secondClipDelay = 10f;  // 텍스트 표시 후 두번째 MP3까지 대기 시간
 
+    private GameObject objectToActive_geobukseon;
+
     private bool _hasPlayed = false;
     private bool _waitingForGeobukseonEnd = false;
     private bool _waitingForSecondClip = false;
@@ -56,6 +58,15 @@ public class NarrationManager : MonoBehaviour
             }
         }
     }
+
+    public void SetObjectToActivateAfterFirstClip(GameObject obj)
+    {
+        objectToActive_geobukseon = obj;
+        if (obj != null)
+            obj.SetActive(false); // 처음엔 꺼두기
+        Debug.Log($"[NarrationManager] 활성화 예약 오브젝트 등록: {obj?.name}");
+    }
+
 
     public void PlayNarration(ContentType type)
     {

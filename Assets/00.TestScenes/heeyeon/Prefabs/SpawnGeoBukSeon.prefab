@@ -154,6 +154,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8466579554146753206}
     m_Modifications:
+    - target: {fileID: 4582959874919017213, guid: b56f7803cf1161d45a0a07b86d5d2afe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8399383316896990656, guid: b56f7803cf1161d45a0a07b86d5d2afe, type: 3}
       propertyPath: m_Name
       value: GeoBukSeon
