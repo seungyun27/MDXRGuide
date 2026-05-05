@@ -7,15 +7,19 @@ public class cshFollowPollack : MonoBehaviour
     public Transform mouth;
     public float facingThreshold = 0.95f;
     public float detectionDistance = 20f;
-    public float followSpeed = 5f;
-    public float acceleration = 2f;
+    public float followSpeed = 0.08f;
+    public float acceleration = 1.2f;
     public float arrivalDistance = 0.1f;
 
     public AnimationCurve scaleCurve = AnimationCurve.Linear(0f, 1f, 1f, 0f);
     public float minScaleRatio = 0f;
 
     private bool isFollow = false;
+    public bool IsFollowing => isFollow;
     private float currentSpeed;
+
+    //소리
+    private AudioSource audioSource;
 
     // 크기 축소용 상태값
     private Vector3 initialScale;
@@ -25,6 +29,7 @@ public class cshFollowPollack : MonoBehaviour
     void Start()
     {
         initialScale = transform.localScale;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -46,7 +51,7 @@ public class cshFollowPollack : MonoBehaviour
         if (toPollack.magnitude > detectionDistance) return;
 
         // 북어의 forward가 액운을 향하는지 즉, 북어를 기준으로 마주보고 있는지 여부를 내적으로 판정
-        float dot = Vector3.Dot(Pollack.transform.forward, toPollack.normalized);
+        float dot = Vector3.Dot(-Pollack.transform.right, toPollack.normalized);
         if (dot < facingThreshold) return;
 
         currentSpeed = followSpeed;
@@ -56,6 +61,11 @@ public class cshFollowPollack : MonoBehaviour
         if (initialDistance < 0.0001f) initialDistance = 0.0001f;
 
         isFollow = true;
+        // 흡입 시작 시 효과음 재생
+        if (audioSource != null && audioSource.clip != null)
+        {
+            AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
+        }
     }
 
     void MoveTowardPollack()
