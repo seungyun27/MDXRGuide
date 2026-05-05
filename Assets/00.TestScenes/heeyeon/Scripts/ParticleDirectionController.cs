@@ -1,11 +1,18 @@
 using UnityEngine;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class ParticleDirectionController : MonoBehaviour
 {
     [SerializeField] private ParticleSystem fireParticleSystem;
     [SerializeField] private Transform shipTransform;  
     [SerializeField] private Transform leftDirection;  
-    [SerializeField] private Transform rightDirection; 
+    [SerializeField] private Transform rightDirection;
+    [SerializeField] private float time = 6.0f;
+    [SerializeField] private bool changed = false;
+    float currentTime = 0.0f;
+    public List<GameObject> Characters;
+    
 
     [Tooltip("배가 이 각도 범위 안에 있으면 불 활성화")]
     [SerializeField] private float angleThreshold = 90f;
@@ -36,12 +43,27 @@ public class ParticleDirectionController : MonoBehaviour
         if (isLookingLeft)
         {
             if (!fireParticleSystem.isPlaying)
+            {
                 fireParticleSystem.Play();
+            }
+            if (!changed)
+            {
+                currentTime += Time.deltaTime;
+
+                if (currentTime >= time)
+                {
+                    Characters[0].SetActive(false);
+                    Characters[1].SetActive(true);
+                    changed = true;
+                }
+            }
         }
         else
         {
             if (fireParticleSystem.isPlaying)
+            {
                 fireParticleSystem.Stop();
+            }
         }
 
         Debug.Log($"Left: {angleToLeft:F1}°, Right: {angleToRight:F1}°, Playing: {fireParticleSystem.isPlaying}");
